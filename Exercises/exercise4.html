@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 23px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 45px;
+            width: 45px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Given 5 boxes, Assign a random color and a random background to each box using DOM concepts
+     -->
+    <div class="container">
+        <div id="first" class="box">Box</div>
+        <div id="second" class="box">Box</div>
+        <div id="thirid" class="box">Box</div>
+        <div id="fourth" class="box">Box</div>
+        <div id="fifth" class="box">Box</div>
+    </div>
+    <script>
+
+        function calColorCode(firstNum,letter,lastNum) {
+            return `${firstNum}${letter}${lastNum}`;
+        }
+        
+        let list = document.getElementsByClassName("box");
+
+        list[0].style.backgroundColor = "#80d480"
+        list[1].style.backgroundColor = "#"+calColorCode(10,"e",4);
+        list[2].style.backgroundColor = "green";
+        list[3].style.backgroundColor = "yellow";
+        list[4].style.backgroundColor = "purple";
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

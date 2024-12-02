@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Practice set 2
+
+/*
+Question 1
+Use logical opeartors to find whether the age of a person lies between 10 and 20
+*/
+let age = 10;
+console.log(age>= 10 && age <=20);
+
+/*
+Question 2
+Demonstrate the use of switch case statements in javaScript
+*/
+switch(age) {
+    case 10:
+      console.log("You cannot drive");
+      break;
+    case 18:
+      console.log("you can now drive");
+      break;
+      case 25:
+        console.log("You can drive");
+        break;
+    default:
+      console.log("go to driving school");
+  }
+
+/*
+Question 3
+Write a javaScript program to find whether a number is divisible by 2 and 3
+*/
+let num = 6;
+
+if(num%2 == 0 && num%3 == 0){
+    console.log(true);
+}
+else{
+    console.log(false);
+}
+
+/*
+Question 4
+Write a javaScript program to find whether a number is divisible by either 2 or 3
+*/
+
+num = 9;
+if(num%2 == 0 || num%3 == 0){
+    console.log(true);
+}
+else{
+    console.log(false);
+}
+
+/*
+Question 5
+Print "You can Drive" or "You cannot Drive" based on age being greate than 18 using ternary operator
+*/
+console.log((age>18)?"You can Drive" : "You cannot Drive");
+
+    </script>
+</body>
+</html>

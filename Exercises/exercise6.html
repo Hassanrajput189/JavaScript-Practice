@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Simulator</title>
+    <style>
+        body {
+            color: green;
+            height: 100vh;
+            background-color: black;
+            font-size: 30px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blinking-dots::after {
+            content: '...';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- Create a hacking simulator which has green background and it shows these messages with random delay of 1 to 7 seconds 
+    
+    Initializing Hacking...
+    Reading your Files...
+    Password files Detected...
+    Sending all passwords and personal files to server...
+    Cleaning up...
+
+    The three dots must blink so that it looks like a real terminal
+    -->
+    <script>
+        function randomDelay() {
+            return new Promise((resolve) => {
+                const delay = 1 + 6 * Math.random();
+                setTimeout(resolve, delay * 1000);
+            });
+        }
+
+        async function addMessage(message) {
+            await randomDelay();
+    
+            const element = document.createElement("div");
+            element.innerHTML = message + '<span class="blinking-dots"></span>';
+            document.body.appendChild(element);
+        }
+
+        async function main() {
+            const messages = [
+                "Initializing Hacking",
+                "Reading your Files",
+                "Password files Detected",
+                "Sending all passwords and personal files to server",
+                "Cleaning up"
+            ];
+
+            for (const message of messages) {
+                await addMessage(message);
+            }
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

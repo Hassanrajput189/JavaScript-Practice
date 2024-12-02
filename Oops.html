@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let obj = {
+        //     a: 1,
+        //     b: "Harry"
+        // }
+
+        // console.log(obj)
+
+        // let animal = {
+        //     eats: true
+        // };
+
+        // let rabbit = {
+        //     jumps: true
+        // };
+
+        // rabbit.__proto__ = animal; // sets rabbit.[[Prototype]] = animal
+
+        // let obj = {
+        //     firstName: "Muhammad",
+        //     midName: "Hassan",
+        //     lastName: "Rajput",
+        //     getFullName: function () {
+        //         console.log(`${this.firstName} ${this.midName} ${this.lastName}`);
+        //     },
+        //     age: 23
+        // };
+
+        // const person = {
+        //     age: 2,
+        //     printAge: function () {
+        //         console.log(this.age);
+        //     }
+        // };
+
+        // obj.__proto__ = person; // Correcting the typo here
+        // obj.printAge(); // This will now work correctly
+
+        class User {
+            constructor(name, email) {
+                // Invokes the setters
+                this.name = name;
+                this.email = email;
+            }
+
+            get name() {
+                return this._name;
+            }
+
+            set name(value) {
+                // Assuming we want to add some validation for the name as well
+                if (value.length < 3) {
+                    console.error("Name is too short.");
+                } else {
+                    this._name = value;
+                }
+            }
+
+            get email() {
+                return this._email;
+            }
+
+            set email(value) {
+                if (value.includes("@")) {
+                    this._email = value;
+                } else {
+                    console.error("Invalid email address");
+                }
+            }
+
+            viewData() {
+                console.log(`Name: ${this.name}, Email: ${this.email}`);
+            }
+        }
+
+        // let user = new User("Hassan", "hassanrajput189@gmail.com");
+        // user.viewData(); // Outputs: Name: Hassan, Email: hassanrajput189@gmail.com
+
+        // // Test with invalid email
+        // user.email = "invalidEmail"; // Logs: Invalid email address
+        // user.viewData(); // Outputs: Name: Hassan, Email: hassanrajput189@gmail.com (unchanged)
+
+
+        // let user = new User("John");
+        // console.log(user.name); // John
+
+        // user.name = "Harry" // Name is too short.
+        // console.log(user.name)
+        class Animal {
+            #name;// private variable
+            constructor(name) {
+                this.setName(name);
+                console.log("Object is created...")
+            }
+            // setters and getters can also be written as 
+            setName(name) {
+                this.name = name;
+            }
+            getName() {
+                return this.name;
+            }
+
+            eats() {
+                console.log("Kha raha hoon")
+            }
+            jumps() {
+                console.log("Kood raha hoon")
+            }
+        }
+
+
+        class Lion extends Animal {
+            constructor(name) {
+                super(name)
+                console.log("Object is created and he is a lion...")
+            }
+
+            eats() {
+                super.eats()
+                console.log("Kha raha hoon roar")
+            }
+        }
+
+        // let a = new Animal("Bunny");
+        // console.log(a);
+
+        // let l = new Lion("Shera")
+        // console.log(l)
+
+        // Practice set 11
+
+        /*
+        Question 1 
+        Create a javaScript class to create a complex number. Create a constructor to set the real and the conplex part
+        */
+
+        /*
+        Question 2
+        Write a method to add two numbers in the above class
+        // */
+
+        /*
+        Question 5
+        Use getters and setters to set and get the real and imaginary parts of the complex numbers
+         */
+
+        class Complex {
+            constructor(real, op, img) {
+                this.real = real;
+                this.op = op;
+                this.img = img;
+            }
+            set real(value){
+                this._real = value;
+            }
+            set img(value){
+                this._img = value;
+            }
+            get real(){
+                return this._real;
+            }
+            get img(){
+                return this._img;
+            }
+            getNumber() {
+                console.log(`The complex number is : ${this.real} ${this.op} i${this.img}`);
+            }
+            addComplex(complex) {
+                let realSum = this.real + complex.real;
+                let imgSum =this.img + complex.img;
+                return `${realSum} ${this.op} i${imgSum}`;
+            }
+        }
+        let complex1 = new Complex(2, "+", 3);
+        let complex2 = new Complex(3, "+", 1);
+        complex1.real = 1;
+        console.log(complex1.real);
+        console.log(complex1.img);
+        
+        
+        // let sum = complex1.addComplex(complex2);
+        // console.log(`The sum is : ${sum}`);
+
+        /*
+        Question 3
+        Create  a class Student from a class Human Override a method And see changes
+         */
+
+        // class Human{
+        //     constructor(gender){
+        //         this.gender = gender;
+        //     }
+        //     getGender(){
+        //         return this.gender;
+        //     }
+        // }
+        // let human = new Human("Male");
+
+        // class Student extends Human{
+        //     constructor(id,name,gender){
+        //         super(gender);
+        //         this.id = id;
+        //         this.name = name;
+        //     }
+        //     getGender(){
+        //         return `The gender of ${this.name} is ${this.gender}`
+        //     }
+        // }
+        // let std  = new Student("108","hassan","Male");
+        
+        /*
+        Question 4
+        See if Student is an instance of Human using instanceOf keyword
+         */
+        // console.log(std instanceof Human);
+        
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

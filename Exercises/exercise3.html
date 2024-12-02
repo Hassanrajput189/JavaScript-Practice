@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Write a program to calculate factorial of a number using reduce and for loops
+
+        example : 6! = 6*5*4*3*2*1
+        */
+
+        function calFactorial(num) {
+            if (num == 1 || num == 0) {
+                return 1;
+            }
+            if(num < 0){
+                num*=-1;
+            }
+            if (isNaN(num)) {
+                return `Cannot calculate factorial of ${num}`;
+            }
+            let factArr = [];
+            for (let i = 1; i <= num; i++) {
+                factArr.unshift(i);
+            }
+            let reduce = factArr.reduce((a, b) => a * b);
+            return `The factorial of ${num} is ${reduce}`;
+        }
+
+        // Recursive approach
+
+        function recursiveFactorial(num) {
+            if (num == 1 || num == 0) {
+                return 1;
+            }
+            if(num < 0){
+                num*=-1;
+            }
+            if (isNaN(num)) {
+                return `Cannot calculate factorial of ${num}`;
+            }
+            return num * recursiveFactorial(num - 1);
+        }
+        
+        let num = prompt("Enter the number");
+        console.log(calFactorial(num));
+        console.log(`The factorial of ${num} throught Recursion is ${recursiveFactorial(num)}`);
+
+
+    </script>
+</body>
+
+</html>

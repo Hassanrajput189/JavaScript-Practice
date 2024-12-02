@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <!-- Practice set 7 -->
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: flex-end;
+        }
+
+        li {
+            padding: 20px
+        }
+
+        .navbar {
+            border: 2px solid black;
+            height: 10vh;
+            width: 100vw;
+        }
+    </style>
+    <nav>
+        <div class="navbar">
+            <ul>
+                <li>products</li>
+                <li>resources</li>
+                <li>references</li>
+                <li>about us</li>
+            </ul>
+        </div>
+    </nav>
+    <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+    <script>
+        /*
+        Question 1
+        Create a navbar and change the color of first element to red
+        */
+        // let sel = document.body.children[1].firstElementChild.firstElementChild.children[0];
+        // sel.style.backgroundColor = "red";
+
+        /*
+        Question 2
+        Create a table without tbody , Now use click on inspect button in the browser to check whether it has a tbody or not
+        */
+        //The browser's rendering engine automatically corrects the markup to conform to the HTML specification by adding a <tbody> element. This behavior helps ensure that tables are correctly parsed and displayed
+
+        /*
+        Question 3
+        Create an element with 3 children .Now change the color of first and last element to green.
+        */
+        // sel.firstElementChild.childNodes[1].firstElementChild.style.backgroundColor = "green";
+
+        // sel.firstElementChild.childNodes[1].lastElementChild.style.backgroundColor="green"
+
+        /*
+        Question 4
+        Write a javascript code to change background of all <li> tags to cyan
+        */
+    //    let doc =document.getElementsByTagName("ul");
+    //    doc[0].style.backgroundColor = "red";
+
+        /*
+        Question 5
+        Which of the following is used to look for the farthest ansesor that matches a given CSS selector
+
+        a. matches
+        b. closest
+        c. contains
+        d. none of these
+
+        the correct answer is b
+        */
+
+    </script>
+
+</body>
+
+</html>

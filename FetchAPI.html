@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//HTTP (HyperText Transfer Protocol) is the foundation of any data exchange on the Web and is a protocol used for transmitting hypertext requests and information between servers and clients.
+
+    // Types of HTTPS request
+
+// GET: Retrieve data from the server. It is the most common HTTP method. Example: GET /index.html.
+// POST: Send data to the server to create/update a resource. Example: submitting form data.
+// PUT: Send data to the server to create/update a resource. Unlike POST, PUT is idempotent.
+// DELETE: Remove a resource from the server.
+// PATCH: Partially modify a resource on the server.
+// HEAD: Same as GET but only retrieves the headers, not the body of the response.
+// OPTIONS: Describe the communication options for the target resource.
+// TRACE: Echoes back the received request, used for debugging purposes.
+// CONNECT: Establishes a tunnel to the server identified by the target resource.
+
+    async function fetchData() {
+
+    // get Request
+
+    // Simulate getting data from a server
+    // let x = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+
+    // Post request
+
+    let x = await fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+    let data = await x.json() 
+    return data
+}
+
+let func = fetchData();
+
+func.then((v) => { 
+    console.log(v)
+
+    console.log("process data")
+ 
+})
+
+// code to display the html of a webpage to the console
+
+// fetch('http://127.0.0.1:3000/DOM_Advanced.html')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         return response.text();
+//     })
+//     .then(html => {
+//         console.log(html); // Log the HTML content to the console
+//     })
+//     .catch(error => {
+//         console.error('There was a problem fetching the webpage:', error);
+//     });
+
+    </script>
+</body>
+</html>

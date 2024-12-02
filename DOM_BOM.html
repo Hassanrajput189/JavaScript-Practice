@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .box{
+            height: 100vh;
+        }
+    </style>
+    <div class="box">
+
+    </div>
+<body>
+    <script>
+        document.title = `Document Object model(DOM) 
+        and Browser Object Model(BOM)`;
+
+        // Practice set 6
+
+        /*
+        Question 1
+        Write a program using prompt function to take input of age as a value from the user and use alert to tell him if he can drive!
+        */
+        let age = prompt("Enter your age");
+        // if (age >= 18) {
+        //     alert("you can drive");
+        // }
+        // else {
+        //     alert("You cannot drive");
+        // }
+
+        /*
+         Question 2
+         In Question 1 use confirm to ask the user if he wants to see the prompt again
+         */
+
+        // let conf = confirm("Do you want to see the prompt again");
+        // if (conf) {
+        //     alert(age);
+        // }
+        /*
+        Question 3
+        In the previous question , use console.error to log the error if the age extended is negative
+        */
+        // if (age < 0) {
+        //     console.error("Age cannot be negative");
+        // }
+
+        /*
+        Question 4
+        Wrie a program to change the url to goole.com (Redirection) if user enters a number greater than 4
+        */
+        // if (age > 4) {
+        //     location.href = "https://www.google.com/";
+        // }
+
+        /*
+        Question 5
+        Change the background of the page to any color based on user input thought prompt
+        */
+        age = Number(age);
+       switch(age){
+        case 1: document.body.style.backgroundColor="green";
+        break;
+        case 2: document.body.style.backgroundColor="blue";
+        break;
+        case 3: document.body.style.backgroundColor="red";
+        break;
+        case 4: document.body.style.backgroundColor="yellow";
+        break;
+        case 5: document.body.style.backgroundColor="purple";
+        break;
+        case 6: document.body.style.backgroundColor="orange";
+        break;
+        case 7: document.body.style.backgroundColor="aqua";
+        break;
+        case 8: document.body.style.backgroundColor="gray";
+        break;
+        case 9: document.body.style.backgroundColor="black";
+        break;
+        default: document.body.style.backgroundColor="brown";
+        break;
+       }
+
+    </script>
+</body>
+
+</html>
+Color

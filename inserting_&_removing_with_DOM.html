@@ -1,0 +1,182 @@
+<!-- <!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Practice set 8 -->
+
+<style>
+    .button {
+        margin: 14px;
+    }
+
+    div span button:hover {
+        color: blue;
+        border: 2px solid black;
+    }
+
+    .bookmark {
+        display: flex;
+        gap: 34px;
+    }
+    .bulb {
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            position: relative;
+        }
+        .bulbOn {
+            background-color: yellow;
+        }
+
+</style>
+
+</head>
+
+<body>
+    <!--Question 1 -->
+    <!-- <div class="container">
+        <div class="button">
+            <span><button>this is button1</button></span>
+            <span><button>this is button2</button></span>
+            <span><button>this is button3</button></span>
+            <span><button>this is button4</button></span>
+        </div>
+    </div> -->
+
+    <!--     
+        Question 2
+        Create a website which is capable of storing bookmarks of your favourite website using href -->
+
+    <!-- <h1>My BookMarks</h1>
+    <ol>
+        <li>
+            <h2>Youtube</h2>
+            <a target="_blank" href="https://www.youtube.com">
+                Go to youtube
+            </a>
+        </li>
+        <li>
+            <h2>WhatsApp</h2>
+            <a target="_blank" href="https://web.whatsapp.com">
+                Go to WhatsApp
+            </a>
+        </li>
+        <li>
+            <h2>Instagram</h2>
+            <a target="_blank" href="https://Instagram.com">
+                Go to Instagram</a>
+        </li>
+        <li>
+            <h2>Facebook</h2>
+            <a target="_blank" href="https://www.Facebook.com">Go to Facebook</a>
+        </li>
+    </ol> -->
+
+    <!--Question 3 -->
+    <!-- <div>
+        <h2>using event listeners</h2>
+    </div>
+    <div class="bookmark">
+        <div id="youtube"><button>youtube.com</button></div>
+        <div id="whatsApp"><button>whatsAppWeb.com</button></div>
+        <div id="instagram"><button>instagram.com</button></div>
+        <div id="facebook"><button>facebook.com</button></div>
+    </div>
+ -->
+    <!-- Question 4 -->
+    <!-- <iframe id="websiteFrame" src="http://127.0.0.1:3000/inserting_&_removing_with_DOM.html"
+        style="width:100%; height:100vh; border:none;"></iframe> -->
+
+
+    <!-- Question 5
+    Create a glowing bulb effect using classlist toggle method in javascript
+     -->
+     <div class="bulb"></div>
+    <script>
+
+
+        /*
+        Question 1
+        Write a program to show different alerts when diferent buttons are clicked
+        */
+        let buttons = document.querySelectorAll("button");
+
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                alert(button.textContent);
+            });
+        });
+
+
+        /*
+        Question 3
+        repeat Question 2 with the help of event listners
+        */
+        // let youtubeBtn = document.querySelector("#youtube");
+        // let whatsAppBtn = document.querySelector("#whatsApp");
+        // let instagramBtn = document.querySelector("#instagram");
+        // let facebookBtn = document.querySelector("#facebook");
+
+
+        // youtubeBtn.addEventListener("click", () => {
+        //     window.location.href = "https://www.youtube.com";
+        // });
+
+        // whatsAppBtn.addEventListener("click", () => {
+        //     window.location.href = "https://web.whatsapp.com";
+        // });
+
+        // instagramBtn.addEventListener("click", () => {
+        //     window.location.href = "https://www.instagram.com";
+        // });
+
+        // facebookBtn.addEventListener("click", () => {
+        //     window.location.href = "https://www.facebook.com";
+        // });
+
+        /*
+        Question 4
+        Write a javascript program to keep fetching contents of a website (every 5 seconds)
+        */
+
+        // Function to reload the iframe with website content
+        function reloadWebsiteContent() {
+            document.getElementById('websiteFrame').contentWindow.location.reload();
+        }
+
+        // Reload website content every 5 seconds
+        setInterval(reloadWebsiteContent, 5000); // 5000 milliseconds = 5 seconds
+
+        /*
+        Question 5
+        Create a glowing bulb effect using classlist.toggle lethod in javascript
+        */
+
+        setInterval(()=>{
+            let b = document.querySelector(".bulb");
+            b.classList.toggle("bulbOn");
+            if (b.classList.contains("bulbOn")) {
+                // Create a text node
+                let textNode = document.createTextNode("ON");
+
+                // Append the text node to the bulb element
+                b.appendChild(textNode);
+            } else {
+                // Remove the text node if the bulb is turned off
+                b.removeChild(b.lastChild);
+            }
+        },1000);
+    </script>
+</body>
+
+</html>

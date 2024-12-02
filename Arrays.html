@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Practice set 5
+
+        /*
+        Question 1
+        Create an array of numbers and take input from the user to add numbers to the array
+        */
+        let arr = [];
+        let input;
+        // do{
+        //     let element = prompt("Enter your number");
+        //     if(isNaN(element)){
+        //         console.log("Invalid Element");
+        //         continue;
+        //     }
+        //     arr.push(element);
+        //     console.log("Current Elements " + arr);
+        //     input = prompt("Press N/n to exit or any key to continue");
+        // }while(input.toLowerCase() !="n");
+        // console.log("Elements Entered " + arr);
+
+
+        /*
+        Question 2
+        Keep adding numbers to the array in Question 1 until 0 is added to the array
+        */
+        // do{
+        //     let element = prompt("Enter your number");
+        //     if(isNaN(element)){
+        //         console.log("Invalid Element");
+        //         continue;
+        //     }
+        //     arr.push(element);
+        //     console.log("Current Elements " + arr);
+        //     input = prompt("Enter 0 to exit or any key to continue");
+        // }while(input != 0);
+        // console.log("Elements Entered " + arr);
+
+        /*
+        Question 3
+        filter for numbers divisible by 10 from a given array
+        */
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // console.log(array.filter((e) => e % 10 == 0));
+
+        /*
+        Question 4
+        Create an array of square of given numbers
+        */
+            // console.log(array.map((e)=> e**2))
+
+        /*
+        Question 5
+        Use reduce to calculate factorial of a given number from an array of first n natural numbers (n being the number whose factorial needs to be calculated)
+        */
+        
+        console.log(array.reduce((a,b)=> a*b));
+    </script>
+</body>
+
+</html>
